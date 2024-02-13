@@ -16,7 +16,7 @@ class TestJQueryUIMenu(BaseTest):
         numFiles = 0
 
         for f in self.directory.iterdir():
-            if f.is_file():
+            if f.is_file() and f.name != ".gitignore":
                 numFiles += 1
 
         print(numFiles)
@@ -25,7 +25,7 @@ class TestJQueryUIMenu(BaseTest):
     def cleanDir(self):
         #Gets all files in the Downloads directory and deletes them
         for f in self.directory.iterdir():
-            if f.is_file():
+            if f.is_file() and f.name != ".gitignore":
                 f.unlink()
 
     def testDownloads(self):
