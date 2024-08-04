@@ -32,9 +32,8 @@ class TestDataTables(BaseTest):
         #For each column print each individual table entry, exlude column headers
         for col in columns:
             c = self.data_tables_page.getColumn(col)
-            for i in range(self.numRows):
-                if i != 0:
-                    print(c[i].text)
+            for i in range(1, self.numRows):
+                print(c[i].text)
 
         #Verify functionality of delete button
         self.data_tables_page.click(DataTablesLocators.DeleteButton)

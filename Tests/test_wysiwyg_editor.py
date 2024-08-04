@@ -9,6 +9,11 @@ class TestWYSIWYGEditor(BaseTest):
         self.wysiwyg_editor_page = WYSIWYGEditorPage(self.driver)
 
     def testEditor(self):
+        #Warning: The site admins are using the free plan for the
+        #TinyMCE editor which has a limited number of editor loads
+        #per month. If this limit is exceeded the editor will be
+        #read-only and this test will fail.
+
         #Clear existing text in editor and send text to editor
         self.wysiwyg_editor_page.switchToEditor()
         self.wysiwyg_editor_page.clearText()
